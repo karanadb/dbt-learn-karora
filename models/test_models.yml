@@ -1,6 +1,6 @@
 version: 2
 models:
-  - name: customers
+  - name: fct_customers
     description: "{{ doc('customer') }}"
     columns:
       - name: customer_id
