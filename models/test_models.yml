@@ -8,6 +8,14 @@ models:
         tests:
           - unique
           - not_null
+  - name: dim_orders
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
   - name: stg_customers
     description: This model cleans up customer data
     columns:
@@ -47,3 +55,7 @@ models:
           - relationships:
               to: ref('stg_customers')
               field: customer_id
+      - name: payment_method
+        tests:
+          - accepted_values:
+              values: ['credit_card', 'coupon', 'bank_transfer', 'gift_card']
