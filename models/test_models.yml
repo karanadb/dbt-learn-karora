@@ -1,7 +1,7 @@
 version: 2
 models:
   - name: fct_customers
-    description: "{{ doc('fct_customers') }}"
+    description: "{{ doc('fct_customer') }}"
     columns:
       - name: customer_id
         description: Primary key
