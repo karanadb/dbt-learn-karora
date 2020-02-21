@@ -2,7 +2,7 @@ version: 2
 sources:
     - name: stripe
       database: raw
-      loaded_at_field: _batched_at
+      loaded_at_field: created::timestamp
       loader: Claire
       freshness:
         warn_after:
@@ -20,7 +20,8 @@ sources:
                 - unique
     - name: jaffle_shop
       database: raw
-      loaded_at_field: _batched_at
+      description: "{{ doc('src_jaffle_shop') }}"
+      loaded_at_field: created::timestamp
       loader: Claire
       freshness:
         warn_after:

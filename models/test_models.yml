@@ -56,6 +56,7 @@ models:
               to: ref('stg_customers')
               field: customer_id
       - name: payment_method
+        description: "{{ doc('payment_method') }}"
         tests:
           - accepted_values:
               values: ['credit_card', 'coupon', 'bank_transfer', 'gift_card']
